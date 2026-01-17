@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayaout.astro";
 import { SERVICE_DATA } from "../../consts";
 import PrincipalForm from "../../components/PrincipalForm/index.astro";
 import Button from "../../components/Button/index.astro";
+export const prerender = false; // ← Agregar esta línea al inicio
 
 export function getStaticPaths() {
   return SERVICE_DATA.services.flatMap((service) => ({

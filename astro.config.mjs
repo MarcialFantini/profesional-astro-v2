@@ -3,16 +3,18 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
-import node from "@astrojs/node";
 
 import tailwindcss from "@tailwindcss/vite";
+
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
+
   site: "https://profesional-astro.vercel.app/",
   integrations: [mdx(), sitemap()],
-  adapter: node({ mode: "standalone" }),
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
   },
